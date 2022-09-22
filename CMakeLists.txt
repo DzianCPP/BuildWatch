@@ -12,13 +12,18 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Sql)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         mainwindow.h
-        mainwindow.ui
+
+        mediator.h
+        mediator.cpp
+
+        createprojectwindow.cpp
+        createprojectwindow.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -44,7 +49,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(BuildWatch PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Sql)
+target_link_libraries(BuildWatch PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 set_target_properties(BuildWatch PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
