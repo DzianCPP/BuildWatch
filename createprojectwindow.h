@@ -17,13 +17,41 @@ public:
 
 private:
     QString* projectName;
+
     QString* projectAddress;
+
     QString* clientName;
+
     QString* clientPhoneNumber;
 
-    void setupUi(QWidget* CreateProjectWindow);
-    void setupTextInUi(QWidget* CreateProjectWindow);
+    QLabel* label_enterProjectName;
 
+    QLabel* label_enterProjectAddress;
+
+    QLabel* label_enterClientName;
+
+    QLabel* label_enterClientPhoneNumber;
+
+    QLineEdit* lineEdit_enterProjectName;
+
+    QLineEdit* lineEdit_enterClientName;
+
+    QLineEdit* lineEdit_enterProjectAddress;
+
+    QLineEdit* lineEdit_enterClientPhoneNumber;
+
+    QPushButton* btn_Ok;
+
+    QPushButton* btn_Cancel;
+
+    QGridLayout* layout_MainLayout;
+
+
+
+
+    void setupUi(QWidget* CreateProjectWindow);
+
+    void setupTextInUi(QWidget* CreateProjectWindow);
 };
 
 #endif // CREATEPROJECTWINDOW_H
