@@ -1,21 +1,13 @@
 #include "mainwindow.h"
-#include "./ui_mainwindow.h"
-
-
-
 
 MainWindow::MainWindow()
 {
-    this->setupUi(this);
+    setupUi(this);
 }
 
 void MainWindow::setupUi(QDialog *MainWindow)
 {
-    if (MainWindow->objectName().isEmpty())
-        MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-    MainWindow->resize(1000, 513);
-    MainWindow->setMinimumSize(QSize(1000, 510));
-    MainWindow->setWindowOpacity(0.000000000000000);
+    setMainWindowFrame(MainWindow);
     gridLayout = new QGridLayout(MainWindow);
     gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
     layoutLeftMain = new QVBoxLayout();
@@ -107,6 +99,19 @@ void MainWindow::setupUi(QDialog *MainWindow)
     QMetaObject::connectSlotsByName(MainWindow);
 }
 
+
+void MainWindow::setMainWindowFrame(QDialog *MainWindow)
+{
+    if (MainWindow->objectName().isEmpty())
+    {
+        MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
+    }
+
+    MainWindow->resize(1000, 510);
+    MainWindow->setMinimumSize(QSize(1000, 510));
+    MainWindow->setWindowOpacity(0.000000000000000);
+}
+
 void MainWindow::setTextInUi(QDialog *MainWindow)
 {
     MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
@@ -116,4 +121,4 @@ void MainWindow::setTextInUi(QDialog *MainWindow)
     labelThirdUpcomingEvent->setText(QCoreApplication::translate("MainWindow", "No text yet...", nullptr));
     btnCreateProject->setText(QCoreApplication::translate("MainWindow", "Create Project", nullptr));
     btnCreateEvent->setText(QCoreApplication::translate("MainWindow", "Create Event", nullptr));
-} // retranslateUi
+}

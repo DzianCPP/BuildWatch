@@ -39,5 +39,6 @@ private:
 
     void setupUi(QDialog *MainWindow);
     void setTextInUi(QDialog *MainWindow);
+    void setMainWindowFrame(QDialog *MainWindow);
 };
 #endif // MAINWINDOW_H

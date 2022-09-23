@@ -5,3 +5,13 @@ CreateProjectWindow::CreateProjectWindow(QWidget *parent)
 {
 
 }
+
+void CreateProjectWindow::setupUi(QWidget *CreateProjectWindow)
+{
+
+}
+
+void CreateProjectWindow::setupTextInUi(QWidget *CreateProjectWindow)
+{
+
+}
