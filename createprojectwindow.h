@@ -32,6 +32,8 @@ private:
 
     QLabel* label_enterClientPhoneNumber;
 
+    QLabel* label_enterComment;
+
     QLineEdit* lineEdit_enterProjectName;
 
     QLineEdit* lineEdit_enterClientName;
@@ -39,6 +41,8 @@ private:
     QLineEdit* lineEdit_enterProjectAddress;
 
     QLineEdit* lineEdit_enterClientPhoneNumber;
+
+    QLineEdit* lineEdit_enterComment;
 
     QPushButton* btn_Ok;
 
@@ -50,8 +54,6 @@ private:
 
 
     void setupUi(QWidget* CreateProjectWindow);
-
-    void setupTextInUi(QWidget* CreateProjectWindow);
 };
 
 #endif // CREATEPROJECTWINDOW_H

@@ -4,6 +4,7 @@
 #include <QObject>
 #include "mainwindow.h"
 #include "createprojectwindow.h"
+#include "createeventwindow.h"
 
 class Mediator : public QObject
 {
@@ -15,18 +16,24 @@ public:
 private slots:
     void slt_initializeCreateProjectWindow();
 
+    void slt_initializeCreateEventWindow();
+
 private:
     MainWindow* _mainWindow;
 
     CreateProjectWindow* _createProjectWindow;
 
+    CreateEventWindow* _createEventWindow;
 
 
-    bool createMainWindow();
+
+    bool initializeMainWindow();
 
     bool initializeCreateProjectWindow();
 
     bool initializeConnections();
+
+    bool initializeCreateEventWindow();
 };
 
 #endif // MEDIATOR_H

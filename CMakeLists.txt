@@ -24,6 +24,9 @@ set(PROJECT_SOURCES
 
         createprojectwindow.cpp
         createprojectwindow.h
+
+	createeventwindow.h
+	createeventwindow.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

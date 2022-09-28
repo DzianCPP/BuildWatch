@@ -121,7 +121,7 @@ void MainWindow::setupUi(QDialog *MainWindow)
 
     layoutTable_CreateEvent->setObjectName(QString::fromUtf8("layoutTable_CreateEvent"));
 
-    tableProjectEvents = new QTableView(MainWindow);
+    tableProjectEvents = new QListView(MainWindow);
 
     tableProjectEvents->setObjectName(QString::fromUtf8("tableProjectEvents"));
 
@@ -133,8 +133,6 @@ void MainWindow::setupUi(QDialog *MainWindow)
 
 
     tableProjectEvents->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
-
-    tableProjectEvents->setSortingEnabled(true);
 
     layoutTable_CreateEvent->addWidget(tableProjectEvents);
 
@@ -191,9 +189,16 @@ void MainWindow::slt_initializeCreateProjectWindow()
     emit sgn_initializeCreateProjectWindow();
 }
 
+void MainWindow::slt_initializeCreateEventWindow()
+{
+    emit sgn_initializeCreateEventWindow();
+}
+
 bool MainWindow::initializeConnectionsForUi()
 {
     QObject::connect(this->btnCreateProject, SIGNAL(clicked()), this, SLOT(slt_initializeCreateProjectWindow()));
+
+    QObject::connect(this->btnCreateEvent, SIGNAL(clicked()), this, SLOT(slt_initializeCreateEventWindow()));
 
     return 0;
 }

@@ -6,7 +6,7 @@
 #include <QComboBox>
 #include <QGroupBox>
 #include <QLabel>
-#include <QTableView>
+#include <QListView>
 #include <QPushButton>
 #include <QCoreApplication>
 
@@ -20,8 +20,12 @@ public:
 signals:
     void sgn_initializeCreateProjectWindow();
 
+    void sgn_initializeCreateEventWindow();
+
 private slots:
     void slt_initializeCreateProjectWindow();
+
+    void slt_initializeCreateEventWindow();
 
 private:
     QGridLayout *gridLayout;
@@ -52,7 +56,7 @@ private:
 
     QVBoxLayout *layoutTable_CreateEvent;
 
-    QTableView *tableProjectEvents;
+    QListView *tableProjectEvents;
 
     QHBoxLayout *layoutCreateEventButton;
 

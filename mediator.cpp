@@ -2,7 +2,7 @@
 
 Mediator::Mediator(QObject *parent)
 {
-    this->createMainWindow();
+    this->initializeMainWindow();
     initializeConnections();
 }
 
@@ -11,7 +11,12 @@ void Mediator::slt_initializeCreateProjectWindow()
     this->initializeCreateProjectWindow();
 }
 
-bool Mediator::createMainWindow()
+void Mediator::slt_initializeCreateEventWindow()
+{
+    this->initializeCreateEventWindow();
+}
+
+bool Mediator::initializeMainWindow()
 {
     this->_mainWindow = new MainWindow(this);
 
@@ -32,6 +37,17 @@ bool Mediator::initializeCreateProjectWindow()
 bool Mediator::initializeConnections()
 {
     QObject::connect(_mainWindow, SIGNAL(sgn_initializeCreateProjectWindow()), this, SLOT(slt_initializeCreateProjectWindow()));
+
+    QObject::connect(_mainWindow, SIGNAL(sgn_initializeCreateEventWindow()), this, SLOT(slt_initializeCreateEventWindow()));
+
+    return true;
+}
+
+bool Mediator::initializeCreateEventWindow()
+{
+    this->_createEventWindow = new CreateEventWindow();
+
+    _createEventWindow->show();
 
     return true;
 }
