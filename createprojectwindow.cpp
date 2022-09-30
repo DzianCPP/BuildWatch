@@ -16,9 +16,6 @@ void CreateProjectWindow::setupUi(QWidget *CreateProjectWindow)
 
     CreateProjectWindow->setWindowOpacity(0.000000000000000);
 
-
-
-
     label_enterProjectName = new QLabel("Enter project name:");
 
     label_enterProjectAddress = new QLabel("Enter project address:");
@@ -28,9 +25,6 @@ void CreateProjectWindow::setupUi(QWidget *CreateProjectWindow)
     label_enterClientPhoneNumber = new QLabel("Enter client phone number:");
 
     label_enterComment = new QLabel("Enter a comment:");
-
-
-
 
     lineEdit_enterProjectName = new QLineEdit;
 
@@ -44,10 +38,8 @@ void CreateProjectWindow::setupUi(QWidget *CreateProjectWindow)
 
     btn_Ok = new QPushButton("Ok", this);
 
-
-
-
     btn_Cancel = new QPushButton("Cancel", this);
+
 
 
 
@@ -62,9 +54,6 @@ void CreateProjectWindow::setupUi(QWidget *CreateProjectWindow)
 
     layout_MainLayout->addWidget(label_enterClientName, 2, 0, 1, 2);
 
-
-
-
     layout_MainLayout->addWidget(label_enterClientPhoneNumber, 3, 0, 1, 2);
 
     layout_MainLayout->addWidget(label_enterComment, 4, 0, 1, 2);
@@ -78,9 +67,6 @@ void CreateProjectWindow::setupUi(QWidget *CreateProjectWindow)
     layout_MainLayout->addWidget(lineEdit_enterClientPhoneNumber, 3, 2, 1, 3);
 
     layout_MainLayout->addWidget(lineEdit_enterComment, 4, 2, 1, 3);
-
-
-
 
     layout_MainLayout->addWidget(btn_Ok, 5, 0, 1, 2);
 

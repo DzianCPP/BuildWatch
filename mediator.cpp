@@ -4,6 +4,7 @@ Mediator::Mediator(QObject *parent)
 {
     this->initializeMainWindow();
     initializeConnections();
+    initializeProjectsDBManager();
 }
 
 void Mediator::slt_initializeCreateProjectWindow()
@@ -49,5 +50,11 @@ bool Mediator::initializeCreateEventWindow()
 
     _createEventWindow->show();
 
+    return true;
+}
+
+bool Mediator::initializeProjectsDBManager()
+{
+    _projectsDBManager = new ProjectsDBManager;
     return true;
 }

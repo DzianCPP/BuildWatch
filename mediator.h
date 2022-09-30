@@ -5,6 +5,7 @@
 #include "mainwindow.h"
 #include "createprojectwindow.h"
 #include "createeventwindow.h"
+#include "projectsdbmanager.h"
 
 class Mediator : public QObject
 {
@@ -12,6 +13,9 @@ class Mediator : public QObject
 
 public:
     explicit Mediator(QObject *parent = nullptr);
+
+signals:
+    void sgn_selectInfoFromProjectsDB();
 
 private slots:
     void slt_initializeCreateProjectWindow();
@@ -25,6 +29,8 @@ private:
 
     CreateEventWindow* _createEventWindow;
 
+    ProjectsDBManager* _projectsDBManager;
+
 
 
     bool initializeMainWindow();
@@ -34,6 +40,8 @@ private:
     bool initializeConnections();
 
     bool initializeCreateEventWindow();
+
+    bool initializeProjectsDBManager();
 };
 
 #endif // MEDIATOR_H
